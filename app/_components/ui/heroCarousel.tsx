@@ -3,17 +3,14 @@
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
 interface HeroCarouselProps {
   images: string[];
+  height?: number;
 }
 
-export default function HeroCarousel({ images }: HeroCarouselProps) {
+export default function HeroCarousel({ images, height }: HeroCarouselProps) {
   return (
     <Carousel
       opts={{ loop: true }}
@@ -22,12 +19,14 @@ export default function HeroCarousel({ images }: HeroCarouselProps) {
           delay: 5000,
         }),
       ]}
-      className="w-full h-screen"
+      className={`w-full ${height ? `h-${height}` : "h-screen"} `}
     >
       <CarouselContent>
         {images.map((image, index) => (
           <CarouselItem key={index}>
-            <div className="relative w-full h-screen">
+            <div
+              className={`relative w-full ${height ? `h-${height}` : "h-screen"}`}
+            >
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}

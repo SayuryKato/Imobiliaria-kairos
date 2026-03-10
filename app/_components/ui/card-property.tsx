@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Pentagon, Bed, Car } from "lucide-react";
 import { Button } from "./button";
+import Link from "next/link";
 
 type CardPropertyProps = {
+  id: number;
   image: string;
   neighborhood: string;
   category: string;
@@ -15,6 +17,7 @@ type CardPropertyProps = {
 };
 
 const CardProperty = ({
+  id,
   image,
   neighborhood,
   category,
@@ -67,7 +70,9 @@ const CardProperty = ({
 
         {/* botão */}
         <Button className="mt-4 h-14 py-3 text-lg font-medium w-full">
-          Ver mais detalhes →
+          <Link href={`/Property/${id}`}>
+          Ver mais detalhes
+          </Link>
         </Button>
       </div>
     </div>

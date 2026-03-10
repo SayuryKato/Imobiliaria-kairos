@@ -1,6 +1,5 @@
-import HomePage from "./HomePage";
-import PropertyPage from "./PropertyPage";
+import HomePage from "./Home/page";
 
 export default async function Home() {
-  return <PropertyPage />;
+  return <HomePage />;
 }
