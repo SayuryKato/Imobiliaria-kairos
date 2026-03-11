@@ -2,7 +2,7 @@
 // IMPORTANTE: Como você tem output personalizado, importe do caminho correto
 // const { PrismaClient } = require("../app/generated/prisma");
 // const prisma = new PrismaClient();
-import { prisma } from "../lib/prisma";
+import { prisma } from "../app/_lib/prisma";
 
 async function seedDatabase() {
   try {
