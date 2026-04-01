@@ -24,14 +24,17 @@ const Header = () => {
       className={`fixed top-0 left-0 z-20 w-full rounded-none border-none transition-all duration-300 ${scrolled ? "bg-black/50 backdrop-blur-lg shadow-md" : "bg-white/5 backdrop-blur-lg"}`}
     >
       <CardContent className="flex items-center justify-between">
-        <div className="rounded-full w-16 h-16 flex items-center justify-center overflow-hidden">
-          <Image
-            src={logo}
-            alt="Logo da Empresa"
-            width={64}
-            height={64}
-            className="object-cover"
-          />
+        <div className="flex gap-4 items-center">
+          <div className="rounded-full w-18 h-18 flex items-center justify-center overflow-hidden">
+            <Image
+              src={logo}
+              alt="Logo da Empresa"
+              width={72}
+              height={72}
+              className="object-cover"
+            />
+          </div>
+          <p className="text-primary font-title">CRECI 12345-J</p>
         </div>
         <div>
           {navItems.map((items, index) => {

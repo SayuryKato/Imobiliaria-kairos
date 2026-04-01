@@ -13,7 +13,7 @@ const HomePage = () => {
       <Statistic />
       <SectionHomeInfor />
 
-      <div className="flex flex-col p-6 gap-4">
+      <div className="flex flex-col p-6">
         <div>
           <p className="text-primary text-sm">PRÉ-LANÇAMENTOS</p>
           <h1 className="font-title font-light text-4xl leading-[1.1] tracking-wide text-black">

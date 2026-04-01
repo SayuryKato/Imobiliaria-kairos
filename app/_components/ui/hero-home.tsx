@@ -3,7 +3,7 @@ import { Button } from "./button";
 import { prisma } from "../../_lib/prisma";
 import HeroCarousel from "./heroCarousel";
 import Link from "next/link";
-
+import { notFound } from "next/navigation";
 export default async function HeroHome() {
   const property = await prisma.property.findUnique({
     where: { id: 1 },
@@ -12,6 +12,10 @@ export default async function HeroHome() {
     },
   });
   console.log("property", property);
+
+  if (!property) {
+   return <div>Não foi possível carregar os dados.</div>;
+  }
 
   return (
     <main className="relative min-h-screen w-full text-white">
@@ -45,9 +49,7 @@ export default async function HeroHome() {
 
         {/* botão */}
         <div className="flex mt-6">
-          <Button
-            asChild
-          >
+          <Button asChild>
             <Link href={"/Property"}>
               <span>Explorar mais</span>
               <ChevronsRight size={18} />

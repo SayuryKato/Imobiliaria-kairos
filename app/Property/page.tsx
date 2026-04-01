@@ -10,18 +10,65 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "../_components/ui/breadcrumb";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "../_components/ui/pagination";
+import { prisma } from "../_lib/prisma";
+import { getPropertyFilterOptions } from "../_data/property-filters";
 
-import CardPropertyFilter from "../_components/ui/card-property-filter";
-const PropertyPage = () => {
+const PropertyPage = async ({
+  searchParams,
+}: {
+  searchParams?: {
+    page?: string;
+    tipo?: string;
+    bairro?: string;
+    quartos?: string;
+    banheiros?: string;
+    vagas?: string;
+  };
+  }) => {
+  const params = await searchParams;
+  const PAGE_SIZE = 8;
+
+  const page = Number(params?.page) || 1;
+
+  const where = {
+
+    ...(params?.bairro && {
+      neighborhood: params.bairro,
+    }),
+
+    ...(params?.quartos && {
+      bedrooms: Number(params.quartos),
+    }),
+
+    ...(params?.banheiros && {
+      bathrooms: Number(params.banheiros),
+    }),
+
+    ...(params?.vagas && {
+      parkingSpaces: Number(params.vagas),
+    }),
+  };
+
+  const totalProperties = await prisma.property.count({
+    where,
+  });
+
+  const totalPages = Math.ceil(totalProperties / PAGE_SIZE);
+
+  const properties = await prisma.property.findMany({
+    where,
+    skip: (page - 1) * PAGE_SIZE,
+    take: PAGE_SIZE,
+    include: {
+      images: true,
+    },
+  });
+
+  const filterOptions = await getPropertyFilterOptions();
+
+  console.log("searchParams:", searchParams);
+  console.log("bairro:", searchParams?.bairro);
+
   return (
     <div>
       <section className="relative w-full h-150">
@@ -33,7 +80,12 @@ const PropertyPage = () => {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black opacity-30"></div> */
-        <Filter />
+        <Filter
+          neighborhoods={filterOptions.neighborhoods}
+          bedrooms={filterOptions.bedrooms}
+          bathrooms={filterOptions.bathrooms}
+          parkingSpaces={filterOptions.parkingSpaces}
+        />
       </section>
 
       <section className="p-8">
@@ -55,44 +107,19 @@ const PropertyPage = () => {
               <span className="text-primary italic"> EMPREENDIMENTOS</span>
             </h1>
             <p className="max-w-lg text-sm text-gray-500 font-body">
-              Conheça todos os projetos residenciais e comerciais da New Home em
-              São Paulo.
+              Conheça todos os projetos residenciais e comerciais da KAIRÓS
+              IMOBILIÁRIA em São Paulo.
             </p>
-          </div>
-
-          <div className="flex items-center justify-start gap-4 rounded">
-            <CardPropertyFilter title="IMÓVEIS DISPONÍVEIS" value={24} />
-            <CardPropertyFilter title="BAIRROS" value={6} />
-            <CardPropertyFilter title="NOVOS LANÇAMENTOS" value={3} />
           </div>
         </div>
 
-        <SectionProperty visibleButton={false} />
-
-        <Pagination>
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                2
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+        <SectionProperty
+          visibleButton={false}
+          properties={properties}
+          totalProperties={totalProperties}
+          page={page}
+          totalPages={totalPages}
+        />
       </section>
     </div>
   );

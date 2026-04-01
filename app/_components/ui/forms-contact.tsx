@@ -165,10 +165,10 @@ export function FormsContact() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            Resetar
           </Button>
           <Button type="submit" form="form-rhf-demo">
-            Submit
+            Enviar
           </Button>
         </Field>
       </CardFooter>

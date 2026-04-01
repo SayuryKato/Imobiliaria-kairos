@@ -8,20 +8,34 @@ import {
 } from "../ui/select";
 
 interface FilterSelectProps {
-    placeholder: string;
+  placeholder: string;
+  value: string;
+  onValueChange: (value: string) => void;
+  items: {
+    label: string;
+    value: string;
+  }[];
 }
 
-const FilterSelect = ({ placeholder }: FilterSelectProps) => {
+const FilterSelect = ({
+  placeholder,
+  value,
+  onValueChange,
+  items,
+}: FilterSelectProps) => {
   return (
-    <Select>
+    <Select value={value} onValueChange={onValueChange}>
       <SelectTrigger className="w-45">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
+
       <SelectContent>
         <SelectGroup>
-          <SelectItem value="light">Light</SelectItem>
-          <SelectItem value="dark">Dark</SelectItem>
-          <SelectItem value="system">System</SelectItem>
+          {items.map((item) => (
+            <SelectItem key={item.value} value={item.value}>
+              {item.label}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>

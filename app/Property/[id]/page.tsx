@@ -21,6 +21,7 @@ import {
 import { Bed, ShowerHead, Car, Ruler, Building } from "lucide-react";
 import imgPlanta from "@/public/images/planta01.png";
 import Image from "next/image";
+import { StaticMap } from "@/app/_components/ui/static-map";
 
 interface PropertyDetailsProps {
   params: Promise<{
@@ -121,13 +122,24 @@ const PropertyDetails = async ({ params }: PropertyDetailsProps) => {
 
           <section>
             <h1 className="text-primary font-title text-2xl mb-2">MAPA</h1>
-            <div className="justify-center items-center flex">
+            {/* <div className="justify-center items-center flex">
               <Image
                 src={imgPlanta}
                 alt="Planta do imóvel"
                 height={500}
                 width={500}
               />
+            </div> */}
+            <div className="h-100 flex items-center justify-center">
+              <a
+                href={`https://www.google.com/maps?q=${encodeURIComponent(
+                  `${property?.address}, ${property?.city}`,
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <StaticMap />
+              </a>
             </div>
           </section>
 
