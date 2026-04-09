@@ -2,8 +2,6 @@ import Image from "next/image";
 import logo from "../../../public/logo.jpeg";
 import ButtonIcon from "./button-icon";
 import {
-  Instagram,
-  Facebook,
   Mail,
   MessageCircle,
   ArrowUp,
@@ -32,8 +30,8 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-4 ">
-            <ButtonIcon icon={<Instagram />} />
-            <ButtonIcon icon={<Facebook />} />
+            {/* <ButtonIcon icon={<Instagram />} />
+            <ButtonIcon icon={<Facebook />} /> */}
             <ButtonIcon icon={<Mail />} />
             <ButtonIcon icon={<MessageCircle />} />
           </div>

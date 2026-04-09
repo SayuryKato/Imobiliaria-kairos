@@ -1,7 +1,7 @@
 import Image from "next/image";
 import img03 from "../../public/images/img03.jpg";
-import Filter from "../_components/ui/filter";
-import SectionProperty from "../_components/ui/section-property";
+import Filter from "../../_components/ui/filter";
+import SectionProperty from "../../_components/ui/section-property";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,9 +9,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../_components/ui/breadcrumb";
-import { prisma } from "../_lib/prisma";
-import { getPropertyFilterOptions } from "../_data/property-filters";
+} from "../../_components/ui/breadcrumb";
+import { prisma } from "../../_lib/prisma";
+import { getPropertyFilterOptions } from "../../_data/property-filters";
 
 const PropertyPage = async ({
   searchParams,
@@ -65,9 +65,6 @@ const PropertyPage = async ({
   });
 
   const filterOptions = await getPropertyFilterOptions();
-
-  console.log("searchParams:", searchParams);
-  console.log("bairro:", searchParams?.bairro);
 
   return (
     <div>

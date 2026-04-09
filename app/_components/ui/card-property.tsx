@@ -61,7 +61,7 @@ const CardProperty = ({ property }: { property: PropertyWithRelations }) => {
 
         {/* botão */}
         <Button className="mt-4 h-14 py-3 text-lg font-medium w-full">
-          <Link href={`/Property/${property.id}`}>Ver mais detalhes</Link>
+          <Link href={`/property/${property.id}`}>Ver mais detalhes</Link>
         </Button>
       </div>
     </div>

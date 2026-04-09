@@ -20,7 +20,7 @@ type PropertyWithImages = Property & {
 interface SectionPropertyProps {
   visibleButton?: boolean;
   properties: PropertyWithImages[];
-  totalProperties: number;
+  totalProperties?: number;
   page?: number;
   totalPages?: number;
 }
@@ -32,29 +32,27 @@ const SectionProperty = ({
   page = 1,
   totalPages = 1,
 }: SectionPropertyProps) => {
-
   if (!properties) {
     return <div>Não foi possível carregar os empreendimentos.</div>;
   }
 
   return (
     <div className="flex flex-col gap-6 p-6">
-      {/* Quantidade */}
-      <div className="flex items-center justify-start gap-4 rounded">
-        <CardPropertyFilter
-          title="IMÓVEIS DISPONÍVEIS"
-          value={totalProperties}
-        />
-      </div>
+      {totalProperties !== undefined && (
+        <div className="flex items-center justify-start gap-4 rounded">
+          <CardPropertyFilter
+            title="IMÓVEIS DISPONÍVEIS"
+            value={totalProperties ?? 0}
+          />
+        </div>
+      )}
 
-      {/* Grid */}
       <div className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 xl:grid-cols-4">
         {properties.map((property) => (
           <CardProperty key={property.id} property={property} />
         ))}
       </div>
 
-      {/* Botão */}
       {visibleButton && (
         <div className="flex items-center justify-center">
           <Button className="mt-4 h-14 py-3 text-lg font-medium" asChild>
@@ -63,7 +61,6 @@ const SectionProperty = ({
         </div>
       )}
 
-      {/* Paginação */}
       {totalPages > 1 && (
         <Pagination>
           <PaginationContent>

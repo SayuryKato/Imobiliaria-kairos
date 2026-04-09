@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../../_components/ui/breadcrumb";
+} from "../../../_components/ui/breadcrumb";
 import TextTitle from "@/app/_components/ui/text-title";
 import { MapPin } from "lucide-react";
 import {
@@ -19,7 +19,6 @@ import {
   CardPropertyInforPerson,
 } from "@/app/_components/ui/card-property-infor";
 import { Bed, ShowerHead, Car, Ruler, Building } from "lucide-react";
-import imgPlanta from "@/public/images/planta01.png";
 import Image from "next/image";
 import { StaticMap } from "@/app/_components/ui/static-map";
 

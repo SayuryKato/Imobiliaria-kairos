@@ -5,8 +5,16 @@ import SectionHomeInfor from "../_components/ui/section-home-infor";
 import SectionHomeMessage from "../_components/ui/section-home-message";
 import SectionProperty from "../_components/ui/section-property";
 import Statistic from "../_components/ui/statistc";
+import { prisma } from "../_lib/prisma";
 
-const HomePage = () => {
+const HomePage = async () => {
+  const properties = await prisma.property.findMany({
+    take: 8,
+    include: {
+      images: true,
+    },
+  });
+
   return (
     <div>
       <HeroHome />
@@ -22,7 +30,7 @@ const HomePage = () => {
             <span className="text-primary italic">grande contato humano</span>
           </h1>
         </div>
-        {/* <SectionProperty /> */}
+        <SectionProperty properties={properties} />
       </div>
 
       <AboutUs />
