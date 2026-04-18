@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/logo.jpeg";
 import { useEffect, useState } from "react";
+import { MobileMenu } from "./app-sidebar-public";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +37,7 @@ const Header = () => {
           </div>
           <p className="text-primary font-title">CRECI 12345-J</p>
         </div>
-        <div>
+        {/* <div>
           {navItems.map((items, index) => {
             const isLast = index === navItems.length - 1;
 
@@ -51,7 +52,28 @@ const Header = () => {
               </Button>
             );
           })}
+        </div> */}
+        <div className="hidden lg:flex items-center gap-2">
+          {navItems.map((items, index) => {
+            const isLast = index === navItems.length - 1;
+
+            return (
+              <Button
+                key={items.href}
+                variant={isLast ? "default" : "link"}
+                className={`cursor-pointer ${
+                  isLast ? "bg-primary text-white" : ""
+                }`}
+                asChild
+              >
+                <Link href={items.href}>{items.label}</Link>
+              </Button>
+            );
+          })}
         </div>
+
+        {/* Mobile */}
+        <MobileMenu />
       </CardContent>
     </Card>
   );

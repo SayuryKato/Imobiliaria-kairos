@@ -8,7 +8,6 @@ const PrivateLayout = ({ children }: { children: React.ReactNode }) => {
       <main className="min-h-screen w-full bg-muted/20">
         <div className="border-b bg-background px-4 py-3">
           <SidebarTrigger />
-          teste
         </div>
 
         <div className="p-6">{children}</div>
