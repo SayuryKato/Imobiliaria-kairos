@@ -17,7 +17,7 @@ export function MobileMenu() {
         </button>
       </SheetTrigger>
 
-      <SheetContent side="left" className="w-72">
+      <SheetContent side="left" className="w-72 p-6">
         <div className="flex flex-col gap-6 mt-6">
           {navItems.map((item, index) => {
             const isLast = index === navItems.length - 1;

@@ -1,14 +1,10 @@
 import CardContactRealtor from "./card-contact-realtor";
 import imgPerson from "@/public/images/person01.png";
-import imgSedeKairos from "../../../public/images/sedeKairos.jpeg";
 import CardWhatsapp from "./card-whatsapp";
-import { StaticMap } from "./static-map";
 import { Clock, MapPinned, MoveUpRight } from "lucide-react";
-import { FaInstagram, FaFacebook, FaWhatsapp, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import { prisma } from "@/app/_lib/prisma";
 import ButtonIconSocial from "./button-icons-social";
-import Image from "next/image";
 
 const ContentContactRight = async () => {
   const realtors = await prisma.realtor.findMany({});

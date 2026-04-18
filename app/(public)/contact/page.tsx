@@ -20,7 +20,7 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-col justify-center min-h-150 max-w-6xl mx-auto px-6 ">
-          <h1 className="font-title font-light text-7xl leading-[1.1] tracking-wide">
+          <h1 className="font-title font-light text-5xl lg:text-7xl leading-[1.1] tracking-wide">
             Estamos <span className="text-primary italic">aqui</span>
             <br />
             para te ajudar
