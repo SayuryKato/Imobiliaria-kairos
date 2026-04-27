@@ -1,24 +1,20 @@
 import Link from "next/link";
 import { Button } from "./button";
-import { FaFacebook, FaInstagram, FaWhatsapp, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const socialLinks = [
   {
     icon: FaFacebook,
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/Kairos.Real.Estete?mibextid=wwXIfr&rdid=bmOeBB0HwFDkvDoz&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dv5N1EWis%2F%3Fmibextid%3DwwXIfr#",
   },
   {
     icon: FaInstagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/kairos_re/",
   },
   {
     icon: FaWhatsapp,
-    href: "https://wa.me/5511999999999",
-  },
-  {
-    icon: FaTwitter,
-    href: "https://twitter.com",
-  },
+    href: "https://wa.me/5511952306798",
+  }
 ];
 
 const ButtonIconSocial = () => {

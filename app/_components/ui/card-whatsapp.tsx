@@ -19,12 +19,15 @@ const CardWhatsapp = () => {
         Clique abaixo para iniciar uma conversa.
       </p>
 
-      <Button className="w-full" onClick={() =>
-                openWhatsApp(
-                  "5511999999999",
-                  `Olá Kairós, vi um imóvel e gostaria de mais informações!`,
-                )
-              }>
+      <Button
+        className="w-full"
+        onClick={() =>
+          openWhatsApp(
+            "+5511952306798",
+            `Olá Kairós, vi um imóvel e gostaria de mais informações!`,
+          )
+        }
+      >
         <p>Conversar no WhatsApp</p>
         <ArrowRight />
       </Button>

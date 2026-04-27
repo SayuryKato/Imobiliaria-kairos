@@ -28,8 +28,7 @@ const AboutUs = () => {
         </h1>
 
         <p className="mt-1 max-w-lg text-sm text-gray-500 font-body">
-          Mais de 500 famílias já realizaram o sonho da casa própria com a New
-          Home. Confira algumas histórias reais.
+          Mais de 500 famílias já realizaram o sonho da casa própria com a Kairós. Confira algumas histórias reais.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">

@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { Button } from "./button";
 import { Card, CardContent } from "./card";
-import { CheckCheck, Star } from "lucide-react";
-import imgPerson from "@/public/images/person01.png";
+import { CheckCheck } from "lucide-react";
+import imgPerson from "@/public/images/person01.jpg";
 import { RatingStars } from "./rating-stars";
 import { openWhatsApp } from "../_utils/whatsapp";
 

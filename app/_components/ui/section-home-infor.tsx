@@ -1,6 +1,6 @@
 import Image from "next/image";
+import img01 from "../../../public/images/img.jpg";
 import { Button } from "./button";
-import img01 from "../../../public/images/img01.png";
 import Link from "next/link";
 
 const SectionHomeInfor = () => {
@@ -39,7 +39,7 @@ const SectionHomeInfor = () => {
       <Image
         src={img01}
         alt="Imagem de uma casa moderna com piscina"
-        width={800}
+        width={750}
         height={600}
         className="mt-6"
         objectFit="cover"

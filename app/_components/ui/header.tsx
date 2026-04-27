@@ -36,7 +36,7 @@ const Header = () => {
             />
           </div>
           <p className="text-xs lg:text-base text-primary font-title">
-            CRECI 12345-J
+            CRECI 49573
           </p>
         </div>
         <div className="hidden lg:flex items-center gap-2">

@@ -47,7 +47,7 @@ export default async function HeroHome() {
         {/* botão */}
         <div className="flex mt-6">
           <Button asChild>
-            <Link href={"/Property"}>
+            <Link href={"/property"}>
               <span>Explorar mais</span>
               <ChevronsRight size={18} />
             </Link>

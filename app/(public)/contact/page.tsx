@@ -38,20 +38,20 @@ const Contact = () => {
         <CardContactInfor
           icon={<Phone size={16} />}
           type="TELEFONE"
-          value="(11) 1234-5678"
+          value="(11) 95586-5499"
           description="Ligue para nós e obtenha assistência personalizada."
         />
         <CardContactInfor
           icon={<Mail size={16} />}
           type="E-MAIL"
-          value="contato@gmail.com"
+          value="kairosre@outlook.com.br"
           description="Resposta em até 24h"
         />
         <CardContactInfor
           icon={<MapPinned size={16} />}
           type="ENDEREÇO"
-          value="Maria Carlota, 714"
-          description="Vila Matilde, São Paulo-SP"
+          value="Av. Paulista, 1636"
+          description="Bela Vista, São Paulo-SP"
         />
         <CardContactInfor
           icon={<Clock size={16} />}
