@@ -5,12 +5,11 @@ import img01 from "../../../public/images/sedeKairos.jpeg";
 
 const SectionHomeMessage = () => {
   return (
-    <div className="bg-primary/10 text-black flex items-center justify-around p-2 h-full w-full lg:h-130 lg:flex-row flex-col gap-1">
-      <div className="flex flex-col justify-center items-start gap-4">
+    <div className="bg-primary/10 text-black flex items-center justify-between px-8 py-6 w-full min-h-130 lg:flex-row flex-col gap-8">
+      <div className="flex flex-col justify-center items-start gap-4 lg:w-6/10">
         <h1 className="font-title font-light lg:text-7xl text-5xl leading-[1.1] tracking-wide">
-          Pronto para encontrar o seu
-          <br />
-          <span className="text-primary italic">lar perfeito?</span>
+          Pronto para transformar sua próxima
+          <span className="text-primary italic"> conquista?</span>
         </h1>
 
         <p className="max-w-lg text-sm text-gray-500 font-body">
@@ -23,13 +22,12 @@ const SectionHomeMessage = () => {
         </Button>
       </div>
 
-      <div className="relative w-1/3 h-64 lg:h-96">
+      <div className="relative lg:w-[55%] w-full h-112.5 overflow-hidden rounded-2xl">
         <Image
           src={img01}
-          alt="Imagem de uma casa moderna com piscina"
+          alt="Imagem institucional"
           fill
-          objectFit="contain"
-          className="w-full h-auto"
+          className="object-contain"
         />
       </div>
     </div>

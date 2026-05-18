@@ -5,7 +5,7 @@ const PrivateLayout = ({ children }: { children: React.ReactNode }) => {
     <SidebarProvider>
       <AppSidebar />
 
-      <main className="min-h-screen w-full bg-muted/20">
+      <main className="min-h-screen w-full bg-black/80">
         <div className="border-b bg-background px-4 py-3">
           <SidebarTrigger />
         </div>

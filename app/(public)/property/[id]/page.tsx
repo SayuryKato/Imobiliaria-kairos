@@ -171,7 +171,7 @@ const PropertyDetails = async ({ params }: PropertyDetailsProps) => {
               </section>
             )}
 
-            {property.media && property.media.length > 0 && (
+            {/* {property.media && property.media.length > 0 && (
               <section>
                 <h1 className="text-primary font-title text-2xl mb-2">
                   TOUR VIRTUAL & VÍDEO
@@ -187,7 +187,7 @@ const PropertyDetails = async ({ params }: PropertyDetailsProps) => {
                   ></iframe>
                 </div>
               </section>
-            )}
+            )} */}
           </section>
 
           <div className="flex flex-col gap-6 w-full lg:w-3/10 static">

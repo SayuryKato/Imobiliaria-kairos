@@ -4,6 +4,7 @@ import { prisma } from "../../_lib/prisma";
 import HeroCarousel from "./heroCarousel";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import TextTitle from "./text-title";
 export default async function HeroHome() {
   const property = await prisma.property.findUnique({
     where: { id: 1 },
@@ -27,15 +28,16 @@ export default async function HeroHome() {
           </div>
 
           {/* overlay escuro */}
-          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-black/80" />
         </div>
       )}
 
       {/* Conteúdo */}
-      <div className="flex flex-col justify-center min-h-screen max-w-6xl mx-auto px-6">
-        <h1 className="font-title font-light text-5xl lg:text-7xl leading-[1.1] tracking-wide">
-          Uma vida <span className="text-primary italic"> mais fácil </span> com
-          uma casa como a nossa casa.
+      <div className="flex flex-col justify-center min-h-screen max-w-6xl mx-auto px-6 ">
+        <h1 className="font-title font-light text-3xl lg:text-7xl leading-[1.1] tracking-wide max-w-4xl">
+          Encontre espaços que acompanham{" "}
+          <span className="text-primary italic">a grandeza </span>
+          dos seus planos
         </h1>
 
         {/* descrição */}
