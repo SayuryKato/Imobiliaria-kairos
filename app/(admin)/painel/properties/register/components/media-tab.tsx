@@ -86,6 +86,7 @@ const MediaTab = () => {
             <Input
               type="file"
               accept="image/*"
+              multiple
               onChange={(e) => handleUpload(e, "images")}
             />
 
@@ -123,6 +124,7 @@ const MediaTab = () => {
             <Input
               type="file"
               accept="image/*,.pdf"
+              multiple
               onChange={(e) => handleUpload(e, "floorPlans")}
             />
 

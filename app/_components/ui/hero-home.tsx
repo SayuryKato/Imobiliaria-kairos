@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import TextTitle from "./text-title";
 export default async function HeroHome() {
   const property = await prisma.property.findUnique({
-    where: { id: 1 },
+    where: { id: 16 },
     include: {
       images: true,
     },

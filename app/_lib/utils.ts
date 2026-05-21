@@ -10,5 +10,5 @@ export function formatPrice(value: number) {
     style: "currency",
     currency: "BRL",
     minimumFractionDigits: 0,
-  }).format(value);
+  }).format(value / 100);
 }

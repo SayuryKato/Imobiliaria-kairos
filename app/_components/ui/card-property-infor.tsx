@@ -6,6 +6,7 @@ import { CheckCheck } from "lucide-react";
 import imgPerson from "@/public/images/person01.jpg";
 import { RatingStars } from "./rating-stars";
 import { openWhatsApp } from "../_utils/whatsapp";
+import { formatPrice } from "@/app/_lib/utils";
 
 interface CardPropertyInforProps {
   icon?: React.ReactNode;
@@ -44,7 +45,6 @@ interface CardPropertyProps {
   pricePerM2?: number;
   condominiumFee?: string | number;
   iptu?: string | number;
-  
 }
 
 const CardPropertyInfor = ({ icon, title, value }: CardPropertyInforProps) => {
@@ -131,22 +131,22 @@ const CardPropertyInforPayment = ({
       <CardContent className="text-black flex flex-col gap-4">
         <div>
           <p>Venda Direta</p>
-          <p className="text-3xl">R$ {price?.toLocaleString("pt-BR")}</p>
-          <p>R$ {pricePerM2?.toLocaleString("pt-BR")} / m²</p>
+          <p className="text-3xl">{formatPrice(price || 0)}</p>
+          <p>R$ {formatPrice(pricePerM2 || 0)} / m²</p>
         </div>
 
         <div className="flex flex-col gap-4">
           <div className="border-dashed border-b border-gray-300 flex justify-between py-2">
             <p className="text-gray-400">Condomínio</p>
-            <p>R$ {condominiumFee?.toLocaleString("pt-BR")} / mês</p>
+            <p>R$ {formatPrice(Number(condominiumFee) || 0)} / mês</p>
           </div>
           <div className="border-dashed border-b border-gray-300 flex justify-between py-2">
             <p className="text-gray-400">IPTU</p>
-            <p>R$ {iptu?.toLocaleString("pt-BR")} / mês</p>
+            <p>R$ {formatPrice(Number(iptu) || 0)} / mês</p>
           </div>
           <div className="border-dashed border-b border-gray-300 flex justify-between py-2">
             <p className="text-gray-400">Valor por m²</p>
-            <p>R$ {pricePerM2?.toLocaleString("pt-BR")} / m²</p>
+            <p>R$ {formatPrice(pricePerM2 || 0)} / m²</p>
           </div>
         </div>
 

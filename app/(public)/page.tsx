@@ -18,7 +18,7 @@ const HomePage = async () => {
   return (
     <div>
       <HeroHome />
-      <Statistic />
+      {/* <Statistic /> */}
       <SectionHomeInfor />
 
       <div className="flex flex-col p-6">

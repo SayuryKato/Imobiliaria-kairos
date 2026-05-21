@@ -23,7 +23,7 @@ export function DetailsTab() {
             Quartos <span className="text-destructive">*</span>
           </FieldLabel>
           <Input
-            placeholder="R$ 0,00"
+            placeholder="Quartos"
             {...register("bedrooms", { valueAsNumber: true })}
           />
           {errors.bedrooms && (
