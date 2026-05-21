@@ -21,6 +21,7 @@ import {
 import { Bed, ShowerHead, Car, Ruler, Building } from "lucide-react";
 import Image from "next/image";
 import { splitTitleSmart } from "@/app/_components/_utils/split-title";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/app/_components/ui/carousel";
 
 interface PropertyDetailsProps {
   params: Promise<{
@@ -157,17 +158,30 @@ const PropertyDetails = async ({ params }: PropertyDetailsProps) => {
 
             {property.floorPlans && property.floorPlans.length > 0 && (
               <section>
-                <h1 className="text-primary font-title text-2xl mb-2">
-                  PLANTA
+                <h1 className="text-primary font-title text-2xl mb-4">
+                  PLANTAS
                 </h1>
-                <div className="justify-center items-center flex">
-                  <Image
-                    src={property.floorPlans[0]?.imageUrl}
-                    alt="Planta do imóvel"
-                    height={500}
-                    width={500}
-                  />
-                </div>
+
+                <Carousel className="w-full max-w-2xl mx-auto">
+                  <CarouselContent>
+                    {property.floorPlans.map((plan, index) => (
+                      <CarouselItem key={index}>
+                        <div className="flex justify-center items-center">
+                          <Image
+                            src={plan.imageUrl}
+                            alt={`Planta ${index + 1}`}
+                            width={400}
+                            height={400}
+                            className="rounded-lg object-contain"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
               </section>
             )}
 
