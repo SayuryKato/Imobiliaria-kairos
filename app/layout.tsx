@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cormorant, outfit } from "./font";
 import { Toaster } from "./_components/ui/sonner";
+import { Providers } from "./providers";
 export const metadata: Metadata = {
   title: "KAIROS REAL STATE",
   description:
@@ -14,11 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body
-        className={`${cormorant.variable} ${outfit.variable} dark bg-white font-body`}
-      >
-        {children}
+    <html lang="pt-br" suppressHydrationWarning>
+      <body className={`${cormorant.variable} ${outfit.variable} font-body`}>
+        <Providers>{children}</Providers>
         <Toaster richColors position="top-right" />
       </body>
     </html>

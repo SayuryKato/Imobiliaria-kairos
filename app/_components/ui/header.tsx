@@ -8,6 +8,7 @@ import Image from "next/image";
 import logo from "../../../public/logo.jpeg";
 import { useEffect, useState } from "react";
 import { MobileMenu } from "./app-sidebar-public";
+import ThemeToogle from "./theme-toogle";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +23,11 @@ const Header = () => {
   }, []);
   return (
     <Card
-      className={`fixed top-0 left-0 z-20 w-full rounded-none border-none transition-all duration-300 ${scrolled ? "bg-black/50 backdrop-blur-lg shadow-md" : "bg-white/5 backdrop-blur-lg"} py-2 px-4 lg:py-3`}
+      className={`
+        fixed top-0 left-0 z-20 w-full rounded-none border-none transition-all duration-300
+        ${scrolled ? "bg-background/50 backdrop-blur-lg shadow-md" : "bg-white/5 backdrop-blur-lg"} 
+        py-2 px-4 lg:py-3
+        `}
     >
       <CardContent className="flex items-center justify-between ">
         <div className="flex gap-4 items-center">
@@ -56,6 +61,7 @@ const Header = () => {
               </Button>
             );
           })}
+          <ThemeToogle />
         </div>
 
         {/* Mobile */}

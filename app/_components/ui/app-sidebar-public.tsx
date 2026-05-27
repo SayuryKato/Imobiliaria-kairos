@@ -6,6 +6,7 @@ import { navItems } from "@/app/_constants/navegation";
 
 import { Sheet, SheetContent, SheetTrigger } from "./sheet";
 import { useState } from "react";
+import ThemeToogle from "./theme-toogle";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -36,6 +37,7 @@ export function MobileMenu() {
             );
           })}
         </div>
+        <ThemeToogle />
       </SheetContent>
     </Sheet>
   );

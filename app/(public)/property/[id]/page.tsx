@@ -73,7 +73,7 @@ const PropertyDetails = async ({ params }: PropertyDetailsProps) => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/Property">Empreendimentos</BreadcrumbLink>
+              <BreadcrumbLink href="/property">Empreendimentos</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>

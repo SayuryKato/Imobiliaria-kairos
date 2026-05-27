@@ -21,10 +21,10 @@ const HomePage = async () => {
       {/* <Statistic /> */}
       <SectionHomeInfor />
 
-      <div className="flex flex-col p-6">
+      <div className="flex flex-col p-6 bg-sections text-sections-foreground">
         <div>
           <p className="text-primary text-sm">PRÉ-LANÇAMENTOS</p>
-          <h1 className="font-title font-light text-4xl leading-[1.1] tracking-wide text-black">
+          <h1 className="font-title font-light text-4xl leading-[1.1] tracking-wide text-foreground">
             Alta tecnologia,
             <br />
             <span className="text-primary italic">grande contato humano</span>

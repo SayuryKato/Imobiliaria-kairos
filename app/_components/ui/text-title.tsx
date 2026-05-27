@@ -6,7 +6,7 @@ interface TextTitleProps {
 
 const TextTitle = ({ title, subtitle, br = false }: TextTitleProps) => {
   return (
-    <h1 className="font-title font-light text-2xl lg:text-4xl leading-[1.1] tracking-wide text-black">
+    <h1 className="font-title font-light text-2xl lg:text-4xl leading-[1.1] tracking-wide text-foreground">
       {title}
       {br && <br />}
       <span className="text-primary italic"> {subtitle}</span>

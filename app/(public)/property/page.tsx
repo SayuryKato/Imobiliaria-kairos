@@ -85,7 +85,7 @@ const PropertyPage = async ({
         />
       </section>
 
-      <section className="p-8">
+      <section className="p-8 bg-white">
         <div className="flex flex-col gap-2 ">
           <Breadcrumb>
             <BreadcrumbList>

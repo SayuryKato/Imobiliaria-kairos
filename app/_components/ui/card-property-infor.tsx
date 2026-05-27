@@ -49,10 +49,10 @@ interface CardPropertyProps {
 
 const CardPropertyInfor = ({ icon, title, value }: CardPropertyInforProps) => {
   return (
-    <Card className="bg-white border border-gray-200 shadow-md p-4 w-full">
+    <Card className="bg-background/90 border border-primary/40 shadow-md p-4 w-full rounded-xs">
       <CardContent className="flex flex-col items-center text-center">
         {icon && <div className="text-2xl mb-2 text-primary">{icon}</div>}
-        <p className="text-3xl text-black">{value}</p>
+        <p className="text-3xl text-foreground">{value}</p>
         <h3 className="font-semibold text-gray-400">{title}</h3>
       </CardContent>
     </Card>
@@ -84,12 +84,12 @@ const CardPropertyInforDimensions = ({ dimensions }: CardPropertyProps) => {
     <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
       {dimensions?.map((dimension, index) => (
         <Card
-          className="bg-white border border-gray-200 shadow-md w-full"
+          className="bg-background/90 border border-primary/40 shadow-md w-full"
           key={index}
         >
           <CardContent className="flex justify-between items-center flex-col lg:flex-row">
             <h3 className="font-semibold text-gray-400">{dimension.name}</h3>
-            <p className="text-xl text-black ">{dimension.size}m²</p>
+            <p className="text-xl text-foreground ">{dimension.size}m²</p>
           </CardContent>
         </Card>
       ))}
@@ -102,7 +102,7 @@ const CardPropertyInforCaracteristics = ({ features }: CardPropertyProps) => {
     <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
       {features?.map((feature, index) => (
         <Card
-          className="bg-white border border-gray-200 shadow-md w-full"
+          className="bg-background/90 border border-primary/40 shadow-md w-full"
           key={index}
         >
           <CardContent className="flex justify-between items-center">
@@ -127,8 +127,8 @@ const CardPropertyInforPayment = ({
   realtor,
 }: CardPropertyProps) => {
   return (
-    <Card className="bg-white border border-gray-200 shadow-md w-full">
-      <CardContent className="text-black flex flex-col gap-4">
+    <Card className="bg-background/90 border border-primary/40 shadow-md w-full">
+      <CardContent className="text-foreground flex flex-col gap-4">
         <div>
           <p>Venda Direta</p>
           <p className="text-3xl">{formatPrice(price || 0)}</p>
@@ -183,9 +183,9 @@ const CardPropertyInforPayment = ({
 
 const CardPropertyInforPerson = ({ realtor }: CardPropertyProps) => {
   return (
-    <Card className="bg-white border border-gray-200 shadow-md p-4 w-full">
+    <Card className="bg-background/90 border border-primary/40 shadow-md p-4 w-full">
       {realtor && (
-        <CardContent className="flex items-center text-center text-black gap-6">
+        <CardContent className="flex items-center text-center text-foreground gap-6">
           <div className="w-20 h-20 rounded-full overflow-hidden relative shrink-0">
             <Image
               src={realtor.photoUrl || imgPerson}
@@ -195,9 +195,13 @@ const CardPropertyInforPerson = ({ realtor }: CardPropertyProps) => {
             />
           </div>
           <div className="flex flex-col items-start justify-start gap-1 mt-1">
-            <p>{realtor.name}</p>
-            <p>{realtor.description || "-"}</p>
-            <p>CRECI {realtor.creci || "-"}</p>
+            <p className="font-semibold text-xl">{realtor.name}</p>
+            <span className="text-xs text-gray-400 italic justify-start">
+              {realtor.description || "-"}
+            </span>
+            <p className="text-sm text-gray-400">
+              CRECI {realtor.creci || "-"}
+            </p>
             <div className="flex gap-1">
               <RatingStars rating={realtor.rating ?? 0} />
             </div>

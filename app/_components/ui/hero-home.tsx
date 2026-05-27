@@ -26,22 +26,27 @@ export default async function HeroHome() {
           <div key={property.id}>
             <HeroCarousel images={property.images.map((img) => img.imageUrl)} />
           </div>
-
-          {/* overlay escuro */}
-          <div className="absolute inset-0 bg-black/80" />
+          <div
+            className="
+              absolute inset-0
+              bg-linear-to-r
+              from-(--hero-overlay-from)
+              via-(--hero-overlay-via)
+              to-(--hero-overlay-to)
+            "
+          />
         </div>
       )}
 
       {/* Conteúdo */}
-      <div className="flex flex-col justify-center min-h-screen max-w-6xl mx-auto px-6 ">
-        <h1 className="font-title font-light text-3xl lg:text-7xl leading-[1.1] tracking-wide max-w-4xl">
-          Encontre espaços que acompanham{" "}
-          <span className="text-primary italic">a grandeza </span>
-          dos seus planos
+      <div className="flex flex-col justify-center min-h-screen max-w-6xl mx-auto px-6">
+        <h1 className="font-title font-light text-3xl lg:text-7xl leading-[1.1] tracking-wide max-w-3xl">
+          Encontre espaços que acompanham a grandeza dos{" "}
+          <span className="text-primary italic">seus plano.</span>
         </h1>
 
         {/* descrição */}
-        <p className="mt-6 max-w-lg text-sm text-gray-200 font-body">
+        <p className="mt-6 max-w-lg text-sm font-body">
           Encontre o imóvel perfeito para o seu estilo de vida. Há 15 anos
           conectando pessoas aos seus lares com excelência e sofisticação.
         </p>

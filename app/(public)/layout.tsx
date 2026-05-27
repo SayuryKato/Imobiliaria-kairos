@@ -10,7 +10,7 @@ const PublicLayout = ({
     <html lang="pt-br">
       <body
         id="top"
-        className={`${cormorant.variable} ${outfit.variable} dark bg-white font-body`}
+        className={`${cormorant.variable} ${outfit.variable} font-body`}
       >
         <Header />
         {children}

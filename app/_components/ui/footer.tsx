@@ -9,7 +9,7 @@ import ButtonIconSocial from "./button-icons-social";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className="bg-black p-6">
+    <div className="bg-black p-6 text-white">
       <section className="flex justify-around lg:flex-row flex-col gap-6 items-center">
         <div className="lg:w-1/4 flex flex-col items-center gap-6">
           <div className="rounded-full flex items-center justify-center">
@@ -61,9 +61,7 @@ const Footer = () => {
       </section>
 
       <section className="flex w-full items-center justify-between mt-6 border-t border-primary/50 pt-6 lg:flex-row flex-col gap-6">
-        <p>
-          © {currentYear} Kairós. Todos os direitos reservados.
-        </p>
+        <p>© {currentYear} Kairós. Todos os direitos reservados.</p>
         <Button variant={"outline"}>
           <Link href={"#top"} className="flex items-center gap-2">
             <ArrowUp /> Voltar ao topo
